@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
     <link rel="stylesheet" href="/Users/mariem/Documents/Diseño Web/pokedex-1/java/express/public/style/style.css">
+    <!-- CDN de Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <main>
@@ -17,11 +19,12 @@
                 <% } %>
             </div>
             <div class="pokemon-info">
-                <h2><%= name %></h2>
-                <p><strong>Tipo:</strong> <%= type.join(", ") %></p>
+                <div class="pokemon-name"><h2><%= name %></h2></div>
+                <div class="pokemon-types"><p><strong>Tipo:</strong> <%= type.join(", ") %></p></div>
                 <p><strong>XP:</strong> <%= xp %></p>
-                <p><strong>Peso:</strong> <%= weight %> kg</p>
-                <p><strong>Altura:</strong> <%= height %> m</p>
+                    <div class="pokemon-measures"><p><strong>Peso:</strong> <%= weight %> kg</p>
+                     <p><strong>Altura:</strong> <%= height %> m</p>
+                    </div>
                 <p><strong>ID:</strong> <%= id %></p>
                 <h3>Movimientos:</h3>
                 <% if (moves.length) { %>
@@ -39,16 +42,60 @@
                         <% }); %>
                     </ul>
                 <% } %>
-                <h3>Stats:</h3>
-                <% if (stats.length) { %>
-                    <ul>
-                        <% stats.forEach(stat => { %>
-                            <li><%= stat.name %>: <%= stat.base_stat %></li>
-                        <% }); %>
-                    </ul>
-                <% } %>
+
+                <div class="pokemon-stats">
+                    <h3>Stats:</h3>
+
+                    <!-- Gráfico de estadísticas -->
+                    <canvas id="statsChart" width="400" height="400"></canvas>
+                </div>
             </div>
         </div>
     </main>
+
+    <script>
+        // Obtener los datos 
+        const stats = <%- JSON.stringify(stats) %>;
+
+        const labels = stats.map(stat => stat.name);
+        const data = stats.map(stat => stat.base_stat);
+
+        // Crear el gráfico 
+        const ctx = document.getElementById('statsChart').getContext('2d');
+        const statsChart = new Chart(ctx, {
+            type: 'bar', 
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Base Stats',
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
