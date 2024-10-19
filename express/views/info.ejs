@@ -1,0 +1,54 @@
+<%- include("./partials/header"); -%>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="/Users/mariem/Documents/Diseño Web/pokedex-1/java/express/public/style/style.css">
+</head>
+<body>
+    <main>
+        <div class="pokemon-card">
+            <div class="pokemon-image">
+                <% if (ima) { %>
+                    <img src="<%= ima %>" alt="<%= name %>">
+                <% } %>
+            </div>
+            <div class="pokemon-info">
+                <h2><%= name %></h2>
+                <p><strong>Tipo:</strong> <%= type.join(", ") %></p>
+                <p><strong>XP:</strong> <%= xp %></p>
+                <p><strong>Peso:</strong> <%= weight %> kg</p>
+                <p><strong>Altura:</strong> <%= height %> m</p>
+                <p><strong>ID:</strong> <%= id %></p>
+                <h3>Movimientos:</h3>
+                <% if (moves.length) { %>
+                    <ul>
+                        <% moves.forEach(move => { %>
+                            <li><%= move %></li>
+                        <% }); %>
+                    </ul>
+                <% } %>
+                <h3>Habilidades:</h3>
+                <% if (abilities.length) { %>
+                    <ul>
+                        <% abilities.forEach(ability => { %>
+                            <li><%= ability %></li>
+                        <% }); %>
+                    </ul>
+                <% } %>
+                <h3>Stats:</h3>
+                <% if (stats.length) { %>
+                    <ul>
+                        <% stats.forEach(stat => { %>
+                            <li><%= stat.name %>: <%= stat.base_stat %></li>
+                        <% }); %>
+                    </ul>
+                <% } %>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
