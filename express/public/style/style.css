@@ -10,8 +10,29 @@ body {
     display: flex;
     height: 100vh;
     overflow: hidden;
+    justify-content: center;
 }
 
+
+.welcome {
+    font-family: 'Khand', sans-serif;
+    font-size: 2rem;
+    color: #181212;
+    letter-spacing: 2px;
+    margin-left: 400px;
+    margin-top: 0px;
+  }
+
+.welcome-background {
+    background-image: url('https://wallpapers-clan.com/wp-content/uploads/2024/07/pokemon-ash-ketchum-pokeball-desktop-wallpaper-preview.jpg'); 
+    background-size: cover;
+    margin-left: -900px;
+    margin-top: 200px;
+    height: 400px; 
+    width: 100%;
+    opacity: 0.8;
+}
+ 
 
 /* Estilos para el sidebar */
 .sidebar {
@@ -90,21 +111,22 @@ main h1 {
     margin-bottom: 20px;
 }
 
+.imagen{
+    width: 100px;
+    height: 50px;
+}
 /* Estilos generales para la card */
 .pokemon-card {
     width: 300px;
-    border-radius: 15px;
-    background-color: #a9dca9;
+    border-radius: 35px;
+    background-color: #eda3a3;
     color: white;
     padding: 20px;
     text-align: center;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     font-family: 'Khand', sans-serif;
-  }
-  
-  .pokemon-image img {
-    width: 150px;
-    height: auto;
+    position: relative;
+    margin: auto;
   }
   
   .pokemon-info {
@@ -121,24 +143,12 @@ main h1 {
     display: flex;
     justify-content: center;
     gap: 10px;
-  }
-  
-  .type {
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 14px;
     text-transform: capitalize;
   }
   
-  .flying {
-    background-color: #A8BBFF;
-    color: #000;
-  }
-  
-  .fire {
-    background-color: #FF6144;
-    color: #FFF;
-  }
   
   .pokemon-measures {
     display: flex;
@@ -147,37 +157,6 @@ main h1 {
     font-size: 16px;
   }
   
-  .pokemon-stats {
-    margin-top: 20px;
-  }
-  
-  .pokemon-stats h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .stat {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .stat-bar {
-    width: 200px;
-    background-color: #333;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-left: 10px;
-  }
-  
-  .bar {
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
-    color: white;
-    border-radius: 10px;
-  }
   
   .hp { background-color: #FF5959; }
   .atk { background-color: #F5AC78; }
