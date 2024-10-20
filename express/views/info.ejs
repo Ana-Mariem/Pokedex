@@ -12,7 +12,8 @@
 </head>
 <body>
     <main>
-        <div class="pokemon-card">
+       
+        <div class="pokemon-carda pokemon-cardb pokemon-cardc">
             <div class="pokemon-image">
                 <% if (ima) { %>
                     <img src="<%= ima %>" alt="<%= name %>">
@@ -51,6 +52,30 @@
                 </div>
             </div>
         </div>
+        <div class="pokemon-navigation">
+            <button id="previous-btn">Previous</button>
+            <button id="next-btn">Next</button>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const currentPokemonId = <%= id %>; // El ID del Pokémon actual pasado desde el backend.
+        
+                const previousBtn = document.getElementById('previous-btn');
+                const nextBtn = document.getElementById('next-btn');
+        
+                // Evento para ir al Pokémon anterior
+                previousBtn.addEventListener('click', function() {
+                    if (currentPokemonId > 1) {
+                        window.location.href = `/pokemon/${currentPokemonId - 1}`;
+                    }
+                });
+        
+                // Evento para ir al siguiente Pokémon
+                nextBtn.addEventListener('click', function() {
+                    window.location.href = `/pokemon/${currentPokemonId + 1}`;
+                });
+            });
+        </script>
     </main>
 
     <script>
@@ -96,6 +121,8 @@
                 }
             }
         });
+
     </script>
 </body>
 </html>
+
