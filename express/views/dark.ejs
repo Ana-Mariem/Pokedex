@@ -6,14 +6,17 @@
     <div>
         
         <section id="Dark">
+            <div class="main3">
             <h1>Dark Type Pokemon</h1>
-            <div id="pokemon-container">
+            </div>
+            <div class="pokemon-cardc">
                 <% pokemons.forEach(pokemon => { %>
                     <a href="/info/<%= pokemon.name %>">
                         <img src="<%= pokemon.image %>" alt="<%= pokemon.name %>">
                         <p><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></p>
                     </a>
                 <% }); %>
+                </div>
             </div>
         </section>
     </div>
