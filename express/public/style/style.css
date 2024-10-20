@@ -105,10 +105,25 @@ main {
     overflow-y: auto;
 }
 
-main h1 {
+.main1 {
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 20px;
+    background-color: rgb(221, 49, 43);
+}
+
+.main2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    background-color: rgb(40, 116, 114);
+}
+
+.main3 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    background-color: rgb(73, 75, 236);
 }
 
 .imagen{
@@ -116,10 +131,36 @@ main h1 {
     height: 50px;
 }
 /* Estilos generales para la card */
-.pokemon-card {
+.pokemon-carda {
     width: 300px;
     border-radius: 35px;
     background-color: #eda3a3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Khand', sans-serif;
+    position: relative;
+    margin: auto;
+  }
+
+.pokemon-cardb {
+    width: 300px;
+    border-radius: 35px;
+    background-color: #79d193;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Khand', sans-serif;
+    position: relative;
+    margin: auto;
+  }
+
+.pokemon-cardc {
+    width: 300px;
+    border-radius: 35px;
+    background-color: #8c84e6;
     color: white;
     padding: 20px;
     text-align: center;
@@ -156,5 +197,27 @@ main h1 {
     margin-top: 10px;
     font-size: 16px;
   }
+
+
+  .pokemon-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #ec2b88;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Khand', sans-serif;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #bf2569;
+}
   
   
