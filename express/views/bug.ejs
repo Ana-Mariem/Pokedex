@@ -6,15 +6,22 @@
     <div>
         
         <section id="bug">
+            <div class="main2">
             <h1>Bug Type Pokemon</h1>
-            <div class="pokemon-card">
+            </div>
+            <div class="pokemon-cardb">
                 <% pokemons.forEach(pokemon => { %>
                     <a href="/info/<%= pokemon.name %>">
+                        <div class="pokemon-image">
                         <img src="<%= pokemon.image %>" alt="<%= pokemon.name %>">
+                        </div>
                         <p><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></p>
                     </a>
                 <% }); %>
+                
             </div>
+            
         </section>
     </div>
 </main>
+
