@@ -5,12 +5,16 @@
 <main>
     <div>
         
-        <section id="<%= pokemonType %>">
-            <h1><%= pokemonType %>Type Pokemon</h1>
-            <div id="pokemon-container">
+        <section id="Ground">
+            <div class="main1">
+            <h1>Ground Type Pokemon</h1>
+            </div>
+            <div class="pokemon-carda">
                 <% pokemons.forEach(pokemon => { %>
                     <a href="/info/<%= pokemon.name %>">
-                        <img src="<%= pokemon.image %>" alt="<%= pokemon.name %>">
+                        <div class="pokemon-image"> 
+                            <img src="<%= pokemon.image %>" alt="<%= pokemon.name %>">
+                        </div>
                         <p><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></p>
                     </a>
                 <% }); %>
